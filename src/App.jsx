@@ -1,10 +1,11 @@
 import Header from "./components/Header";
-// import Banner from "./components/Banner";
+import Banner from "./components/Banner";
 
 function App() {
   return (
     <div className="wrapper">
       <Header />
+      <Banner />
     </div>
   );
 }

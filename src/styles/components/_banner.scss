@@ -1,0 +1,59 @@
+.banner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: $linearGradient;
+  }
+  &__image {
+    width: 100%;
+    height: 1000px;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+  }
+  &__info {
+    @include flex(flex-start);
+    flex-direction: column;
+    max-width: 789px;
+    width: 100%;
+    gap: 32px;
+    transform: translate(0px, 250px);
+    padding: 0 0 20px 0;
+    position: relative;
+    z-index: 2;
+  }
+  &__title {
+    color: $white;
+    font-size: $mainTitleSize;
+  }
+  &__text {
+    color: $white;
+    font-size: $fontSize;
+  }
+  &__btn {
+    padding: 12px 54px;
+    font-size: $fontSize;
+    color: $white;
+    background: $orange;
+    border: 2px solid transparent;
+    transition: $transition;
+    &:hover {
+      color: $orange;
+      border-color: $orange;
+      background: transparent;
+    }
+  }
+  @media screen and (max-width: 845px) {
+    &__title {
+      font-size: 30px;
+    }
+  }
+}
