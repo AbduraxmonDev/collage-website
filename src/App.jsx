@@ -5,7 +5,9 @@ function App() {
   return (
     <div className="wrapper">
       <Header />
-      <Banner />
+      <div className="main">
+        <Banner />
+      </div>
     </div>
   );
 }
