@@ -9,14 +9,18 @@ function Header() {
     setActive(index);
   };
 
-  const [isOpen, setIsOpen] = useState(false);
-
+  const [isHeaderOpen, setIsHeaderOpen] = useState(false);
   const handleButtonClick = () => {
-    setIsOpen(!isOpen);
+    setIsHeaderOpen(!isHeaderOpen);
+    if (isHeaderOpen) {
+      document.body.style.overflow = "auto";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
   };
 
   return (
-    <header className={isOpen ? "header open" : "header"}>
+    <header className={isHeaderOpen ? "header open" : "header"}>
       <div className="container">
         <div className="header__container">
           <div className="logo">
