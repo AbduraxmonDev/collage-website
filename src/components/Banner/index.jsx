@@ -5,7 +5,7 @@ function Banner() {
   return (
     <main className="main">
       <section className="banner">
-        <img src={Image} alt="bannerImage" className="banner__image" />
+        <img src={Image} alt="banner img" className="banner__image" />
         <div className="container">
           <div className="banner__container">
             <div className="banner__info">

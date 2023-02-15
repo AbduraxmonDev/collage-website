@@ -1,15 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../assets/icons/logo.svg";
-import { useState } from "react";
 
 function Header() {
   const [active, setActive] = useState(false);
+  const [isHeaderOpen, setIsHeaderOpen] = useState(false);
 
-  const handleClick = (index) => {
-    setActive(index);
+  const handleClick = () => {
+    setActive(true);
   };
 
-  const [isHeaderOpen, setIsHeaderOpen] = useState(false);
   const handleButtonClick = () => {
     setIsHeaderOpen(!isHeaderOpen);
     if (isHeaderOpen) {
@@ -32,18 +31,15 @@ function Header() {
             <nav className="navbar__list">
               <a
                 href="#"
-                className={
-                  active === 0 ? "navbar__link active" : "navbar__link"
-                }
-                onClick={() => handleClick(0)}
+                className={active ? "navbar__link active" : "navbar__link"}
+                onClick={() => handleClick()}
               >
                 Home
               </a>
               <a
                 href="#"
-                className={
-                  active === 1 ? "navbar__link active" : "navbar__link"
-                }
+                className={`navbar__link
+                  ${active === 1 ? "navbar__link active" : ""}`}
                 onClick={() => handleClick(1)}
               >
                 Programmes
